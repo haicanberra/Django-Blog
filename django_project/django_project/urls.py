@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from users import views as user_views
 from django.contrib.auth import views as auth_views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # Add blog url
 from django.urls import include
@@ -33,6 +34,7 @@ urlpatterns = [
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password-reset-confirm.html'), name='password_reset_confirm'),
     path('profile/', user_views.profile, name='profile'),
 ]
+urlpatterns += staticfiles_urlpatterns()
 
 from django.conf import settings
 from django.conf.urls.static import static
