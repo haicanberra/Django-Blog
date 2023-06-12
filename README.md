@@ -17,6 +17,8 @@
 
 <a name="about"></a>
 ## About
+Django Blog - A Platform for Sharing Personal Experiences
+- Implemented user authentication, user profiles, and a responsive homepage showcasing latest posts.
 
 <a name="packages"></a>
 ## Packages
