@@ -34,14 +34,10 @@ Django Blog - A Platform for Sharing Personal Experiences
 
 <a name="usages"></a>
 ## Usages
-- Clone the repository.
-- Run these to prepare dependencies:
+- Build and run Dockerfile in ```/src```:
     ```
-    pip install -r requirements.txt
-    python manage.py makemigrations
-    python manage.py migrate
-    python manage.py createsuperuser
-    python manage.py runserver
+    docker build -t django-blog ./src
+    docker run -p 8000:8000 django-blog
     ```
 - Access ```http://127.0.0.1:8000/``` in browser.
 
