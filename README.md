@@ -39,7 +39,7 @@ Django Blog - A Platform for Sharing Personal Experiences
     docker build -t django-blog ./src
     docker run -p 8000:8000 django-blog
     ```
-- Access ```http://127.0.0.1:8000/``` in browser.
+- Access http://127.0.0.1:8000/ in browser.
 
 ---
 
