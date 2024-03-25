@@ -1,0 +1,65 @@
+find . -name "*:Zone.Identifier" -type f -delete
+
+django-admin startproject django_project  
+  
+python manage.py runserver  
+  
+python manage.py startapp blog  
+  
+add app to instaleld app -> django looks for templates/appname/...html
+fill in views.py
+  
+https://github.com/romkatv/powerlevel10k/issues/127#issuecomment-590782683  
+  
+Notes:  
+Access variables with {{ variable }} (passed in from views.py)  
+  
+For loop  
+{% for post in posts %}  
+{% endfor %}  
+  
+For using a base html and change some places for different sites:  
+In base html: 
+{% block content %}{% endblock content %}  
+In flex html:  
+{% extends "blog/base.html" %}  
+{% block content %}{% endblock content %}  
+  
+A static folder with css:  
+{% load static %}  (In the html)  
+  
+views.py auto take from templates folder  
+return render(request, 'blog/home.html', context)  
+  
+python manage.py shell  
+from blog.models import Post
+from django.contrib.auth.models import User
+
+User.objects.all(), .first(), .filter(username=..).first() -> <User: ...> (last?)
+user.id -> User.objects.get(id=1)
+user.pk
+user=User.objects.first()
+post_1 = Post(title='Blog 1', content='First Post Content!', author=user)
+author_id = user.id still works
+-> return: Post.objects.all()
+<QuerySet [<Post: Post object (1)>]> (not descriptive)
+-> dunder str
+user.modelname_set -> get all modelname from user
+user.post_set.create(title='Blog 3', content='Thrid post content')
+
+Show in admin page:
+from .models import Post
+admin.site.register(Post)
+
+adding custom form -> inherit form class
+crispy form + crispy_bootstrap4
+{% load crispy_forms_tags %} in html header under extends
+
+redirect to home after login
+settings.py of project -> LOGIN_REDIRECT_URL = 'blog-home'
+
+check logged in or not decorater @login_required
+
+show in admin page: register in admin.py of the app admin.site.register(Profile)
+
+onetoone relationship

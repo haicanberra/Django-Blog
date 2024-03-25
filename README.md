@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./thumbnail.png" width="300">
+<img src="./assets/thumbnail.png" width="300">
 
 # Django Blog
 
